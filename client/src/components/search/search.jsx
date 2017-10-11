@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { throttle } from 'lodash';
 
-import SpinnerIcon from './spinner';
+import LoaderIcon from './loader';
 
 const StyledIconButton = styled(IconButton)`
   && {
@@ -54,7 +54,7 @@ const SearchComponent = ({ inputChanged, isSearchInProgress = false }) => {
         />
         <StyledIconButton>
           {isSearchInProgress ?
-            <SpinnerIcon />
+            <LoaderIcon />
             :
             <SearchIcon />}
         </StyledIconButton>

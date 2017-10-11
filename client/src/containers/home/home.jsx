@@ -3,6 +3,8 @@ import Grid from 'material-ui/Grid';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 import SearchContainer from '../search';
+import ResultContainer from '../results';
+
 
 class Home extends Component {
   constructor(props) {
@@ -17,6 +19,9 @@ class Home extends Component {
       <Grid container direction="column">
         <Grid item>
           <SearchContainer />
+        </Grid>
+        <Grid item>
+          <ResultContainer />
         </Grid>
       </Grid>
     );

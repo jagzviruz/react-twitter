@@ -23,7 +23,7 @@ class SearchContainer extends Component {
 
   inputChanged(value) {
     const { params } = this.state;
-
+    params.q = value;
     if (value && value.length > 4 && value !== this.state.prevText) {
       this.setState({
         prevText: value,
@@ -32,7 +32,6 @@ class SearchContainer extends Component {
           q: value,
         },
       });
-      // console.log(this.props, this.props.searchActions, params);
       this.props.isSearching();
       this.props.triggerSearch(params);
     }

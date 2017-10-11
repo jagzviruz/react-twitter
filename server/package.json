@@ -1,0 +1,25 @@
+{
+  "name": "twitter-proxy-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "PORT=3001 nodemon -w ./ --exec \"babel-node .\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.8.2",
+    "lusca": "^1.5.2",
+    "morgan": "^1.9.0",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.12.1"
+  }
+}
