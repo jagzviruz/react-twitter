@@ -30,7 +30,7 @@ const SearchInput = styled(Input)`
   }
 `;
 
-const SearchComponent = ({ inputChanged, isSearchInProgress = false }) => {
+const SearchComponent = ({ inputChanged, isSearchInProgress = false, fieldDirty }) => {
   const throttledInputChanged = throttle(({ target }) => {
     const { value } = target;
 
@@ -38,7 +38,11 @@ const SearchComponent = ({ inputChanged, isSearchInProgress = false }) => {
       inputChanged(value);
     }
   }, 1000);
+  const throttleFieldDirty = throttle(({ target }) => {
+    const { value } = target;
 
+    fieldDirty(value);
+  }, 1000);
   return (
     <Grid container justify="center">
       <SearchHolder item xs={8}>
@@ -46,6 +50,7 @@ const SearchComponent = ({ inputChanged, isSearchInProgress = false }) => {
           autoFocus
           fullWidth
           placeholder="Search"
+          onKeyUp={(e) => { e.persist(); throttleFieldDirty(e); }}
           onChange={(e) => { e.persist(); throttledInputChanged(e); }}
           inputProps={{
             'aria-label': 'Search',
@@ -64,6 +69,7 @@ const SearchComponent = ({ inputChanged, isSearchInProgress = false }) => {
 };
 
 SearchComponent.propTypes = {
+  fieldDirty: PropTypes.func.isRequired,
   inputChanged: PropTypes.func.isRequired,
   isSearchInProgress: PropTypes.bool.isRequired,
 };

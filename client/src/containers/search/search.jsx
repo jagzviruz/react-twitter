@@ -41,6 +41,7 @@ class SearchContainer extends Component {
     return (
       <SearchComponent
         inputChanged={this.inputChanged}
+        fieldDirty={this.props.isDirty}
         isSearchInProgress={this.props.isBusySearching}
       />
     );
@@ -50,6 +51,7 @@ class SearchContainer extends Component {
 SearchContainer.propTypes = {
   result_type: PropTypes.string,
   isSearching: PropTypes.func.isRequired,
+  isDirty: PropTypes.func.isRequired,
   isBusySearching: PropTypes.bool.isRequired,
   triggerSearch: PropTypes.func.isRequired,
 };

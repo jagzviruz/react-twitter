@@ -14,7 +14,14 @@ const resultReducer = (
       return {
         ...state,
         isBusySearching: false,
-        ...action.results,
+        results: action.results,
+        isDirty: true,
+      };
+    case 'SEARCH_INPUT_DIRTY':
+
+      return {
+        ...state,
+        isDirty: action.dirty && (action.dirty.length > 0),
       };
     default:
       return {

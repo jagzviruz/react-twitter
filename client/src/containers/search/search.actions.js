@@ -1,3 +1,8 @@
+export const isDirty = dirty => ({
+  type: 'SEARCH_INPUT_DIRTY',
+  dirty,
+});
+
 export const triggerSearch = params => ({
   type: 'TRIGGER_SEARCH',
   params,

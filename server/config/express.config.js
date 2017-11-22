@@ -10,7 +10,10 @@ const expressConfigurator = (routesConfig) => {
 
   app.use(bodyParser.json()); // support json encoded bodies
   app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-  app.use(helmet());
+  app.use(helmet({
+    noCache: true,
+    frameguard: { action: 'deny' },
+  }));
   app.use(
     morgan(
       '[:date[iso]] :date[web] :remote-addr - :remote-user :method :url :status[pretty] :response-time',
