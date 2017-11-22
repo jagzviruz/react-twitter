@@ -24,7 +24,7 @@ class SearchContainer extends Component {
   inputChanged(value) {
     const { params } = this.state;
     params.q = value;
-    if (value && value.length > 4 && value !== this.state.prevText) {
+    if (value && value.length > 2 && value !== this.state.prevText) {
       this.setState({
         prevText: value,
         params: {

@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
     })
     .catch(err => {
-
+      console.log(err);
     })
 
 });

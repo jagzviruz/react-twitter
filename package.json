@@ -9,11 +9,17 @@
     "server": "cd server && npm run dev",
     "client": "cd client && yarn start",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "setup": "rm -rf node_modules client/node_modules server/node_modules && cd client && yarn install && cd ../server && yarn install"
+    "setup": "rm -rf node_modules client/node_modules server/node_modules && cd client && yarn install && cd ../server && yarn install",
+    "prebuild": "rimraf dist* ",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:server && npm run build:client",
+    "postbuild": "cd dist && npm i"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+    "eslint": "^4.11.0"
   }
 }
