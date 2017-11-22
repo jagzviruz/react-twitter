@@ -7,7 +7,7 @@ Once you have cloned the application on a system having node.js,
 you need to run `npm run setup` in the root folder to install all the
 dependencies.
 
-Before you can do anything, you need to populate the values from your Twitter App Console (https://app.twitter.com)
+Before you can do anything, you need to populate the values from your Twitter App Console (https://apps.twitter.com)
 in `server/.env`
 
 #### Development mode
